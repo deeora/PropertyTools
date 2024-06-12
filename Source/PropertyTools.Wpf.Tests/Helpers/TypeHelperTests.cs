@@ -150,6 +150,22 @@ namespace PropertyTools.Wpf.Tests
             Assert.IsFalse(TypeHelper.IsIListIList(dt.DefaultView.GetType()));
         }
 
+        [Test]
+        public void IsIListIList_ArrayListArrayList_ReturnTrue()
+        {
+            var listlist = new ArrayList();
+            listlist.Add(new ArrayList());
+            Assert.IsTrue(TypeHelper.IsIListIList(listlist));
+        }
+
+        [Test]
+        public void IsIListIList_ArrayArray_ReturnTrue()
+        {
+            var listlist = new object[1];
+            listlist[0] = new object[1];
+            Assert.IsTrue(TypeHelper.IsIListIList(listlist));
+        }
+
         private class CustomItemType
         {
         }
