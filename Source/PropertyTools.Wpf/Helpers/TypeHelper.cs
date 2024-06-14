@@ -249,6 +249,17 @@ namespace PropertyTools.Wpf
 
             return innerType;
         }
+        
+        /// <summary>
+        /// Determines whether the instance is IList{IList}.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the type is IList{IList}; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsIListIList(IList list)
+        {
+            return IsIListIList(list.GetType()) || (list.Count > 0 && list[0] is IList);
+        }
 
         /// <summary>
         /// Determines whether the type is IList{IList}.

@@ -518,7 +518,7 @@ namespace PropertyTools.Wpf
         /// </summary>
         /// <param name="cell">The cell.</param>
         /// <returns>The context object.</returns>
-        public object GetDataContext(CellRef cell)
+        public virtual object GetDataContext(CellRef cell)
         {
             var pd = this.GetPropertyDefinition(cell);
             var item = this.GetItem(cell);

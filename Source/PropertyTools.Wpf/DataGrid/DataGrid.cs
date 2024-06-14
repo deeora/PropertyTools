@@ -1997,7 +1997,7 @@ namespace PropertyTools.Wpf
                 return null;
             }
 
-            if (TypeHelper.IsIListIList(list.GetType()))
+            if (TypeHelper.IsIListIList(list))
             {
                 return new ListListOperator(this);
             }
