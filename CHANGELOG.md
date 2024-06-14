@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file.
 - Update namespace for ButtonChrome and SystemDropShadowChrome controls #316
 - DataGrid: Support for untyped lists of lists #343
 
+### Changed
+- TypeHelper.IsIListIList(Type) method changed to private #343
+
 ### Added 
 - Support for .NET 6 - Windows #317
 - Support for .NET 4.6.2 #317
@@ -20,7 +23,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - Support for .NET 4.5.2 #317
 - Support for .NET Core App 3.0 #317
-
+ 
 ## [3.1.0]
 ### Added
 - Support for .NET Core 3.0 #221

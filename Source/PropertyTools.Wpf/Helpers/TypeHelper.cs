@@ -268,7 +268,7 @@ namespace PropertyTools.Wpf
         /// <returns>
         /// <c>true</c> if the type is IList{IList}; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsIListIList(Type type)
+        private static bool IsIListIList(Type type)
         {
             if (!typeof(IList).IsAssignableFrom(type))
             {

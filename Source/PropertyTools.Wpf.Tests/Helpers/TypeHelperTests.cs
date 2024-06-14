@@ -134,20 +134,22 @@ namespace PropertyTools.Wpf.Tests
         [Test]
         public void IsIListIList_ObservableCollectionObservableCollection_ReturnTrue()
         {
-            Assert.IsTrue(TypeHelper.IsIListIList(typeof(List<List<double>>)));
+            var instance = new List<List<double>>();
+            Assert.IsTrue(TypeHelper.IsIListIList(instance));
         }
 
         [Test]
         public void IsIListIList_SubclassOfIListIList_ReturnTrue()
         {
-            Assert.IsTrue(TypeHelper.IsIListIList(typeof(Testclass<double>)));
+            var instance = new Testclass<double>();
+            Assert.IsTrue(TypeHelper.IsIListIList(instance));
         }
 
         [Test]
         public void IsIListIList_DataTable_ReturnFalse()
         {
             var dt = new DataTable();
-            Assert.IsFalse(TypeHelper.IsIListIList(dt.DefaultView.GetType()));
+            Assert.IsFalse(TypeHelper.IsIListIList(dt.DefaultView));
         }
 
         [Test]
