@@ -1579,7 +1579,6 @@ namespace PropertyTools.Wpf
                             if (propertyControl != null)
                             {
                                 propertyPanel.RowDefinitions.Add(new System.Windows.Controls.RowDefinition());
-                                Grid.SetColumnSpan(labelPanel, 2);
                                 Grid.SetRow(propertyControl, 1);
                                 Grid.SetColumn(propertyControl, 0);
                                 Grid.SetColumnSpan(propertyControl, 2);
