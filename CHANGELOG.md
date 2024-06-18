@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - TreeListBox: Fix items being added under collapsed nodes #264
 - Update namespace for ButtonChrome and SystemDropShadowChrome controls #316
 - DataGrid: Support for untyped lists of lists #343
+- PropertyGrid: Fix description icon alignment for HeaderPlacement set to Above #347
 
 ### Changed
 - TypeHelper.IsIListIList(Type) method changed to private #343
