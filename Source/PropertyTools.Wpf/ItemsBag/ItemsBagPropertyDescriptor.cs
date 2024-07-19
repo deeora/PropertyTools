@@ -157,7 +157,11 @@ namespace PropertyTools.Wpf
         public override void SetValue(object component, object value)
         {
             var bag = (ItemsBag)component;
-            bag.SuspendNotifications = true;
+
+            // Disabled 'bag.SuspendNotifications' to address a UI display issue in the property grid,
+            // as documented in issue https://github.com/PropertyTools/PropertyTools/issues/353.
+            // bag.SuspendNotifications = true;
+
             foreach (var obj in bag.Objects)
             {
                 var type = obj.GetType();
@@ -166,7 +170,8 @@ namespace PropertyTools.Wpf
             }
 
             bag.RaisePropertyChanged(this.Name);
-            bag.SuspendNotifications = false;
+
+            // bag.SuspendNotifications = false;
         }
 
         /// <summary>
