@@ -307,7 +307,7 @@ namespace PropertyTools.Wpf
                     Padding = this.ItemPadding,
                 };
 
-                var binding = CreateBindingFromOptionEnable(itemValue, enumType);
+                var binding = CreateBindingFromOptionEnableByAttribute(itemValue, enumType);
                 if (binding != null)
                 {
                     rb.SetBinding(UIElement.IsEnabledProperty, binding);
@@ -337,7 +337,7 @@ namespace PropertyTools.Wpf
         /// <returns>
         /// A data binding instance if the enum item has an <see cref="OptionEnableByAttribute"/>; otherwise, null.
         /// </returns>
-        private Binding CreateBindingFromOptionEnable(object itemValue, Type enumType)
+        private Binding CreateBindingFromOptionEnableByAttribute(object itemValue, Type enumType)
         {
             var itemName = itemValue?.ToString();
             if (itemName == null)
