@@ -82,12 +82,6 @@ namespace PropertyTools.Wpf
         {
             get
             {
-                if (this.defaultDescriptor.PropertyType.IsValueType)
-                {
-                    var nt = this.GetNullableType(this.defaultDescriptor.PropertyType);
-                    return nt;
-                }
-
                 return this.defaultDescriptor.PropertyType;
             }
         }
@@ -179,30 +173,6 @@ namespace PropertyTools.Wpf
         public override bool ShouldSerializeValue(object component)
         {
             return false;
-        }
-
-        /// <summary>
-        /// Gets the type of the <see cref="Nullable" />.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns>
-        /// The <see cref="Type" />.
-        /// </returns>
-        private Type GetNullableType(Type type)
-        {
-            // http://stackoverflow.com/questions/108104/how-do-i-convert-a-system-type-to-its-nullable-version
-            // Use Nullable.GetUnderlyingType() to remove the Nullable<T> wrapper if type is already nullable.
-            var underlyingType = Nullable.GetUnderlyingType(type);
-            if (underlyingType != null)
-            {
-                return type;
-            }
-
-            // if (type.IsValueType)
-            return typeof(Nullable<>).MakeGenericType(type);
-
-            // else
-            // return type;
         }
     }
 }
