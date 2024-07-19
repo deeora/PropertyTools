@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Update namespace for ButtonChrome and SystemDropShadowChrome controls #316
 - DataGrid: Support for untyped lists of lists #343
 - PropertyGrid: Fix description icon alignment for HeaderPlacement set to Above #347
+- RadioButtonList: Enhance RadioButton Control with Individual Button Enable/Disable Capability #350
 - ItemsBag: Ensure that the ItemsBag Property Descriptor fix does not suppress the property change notifications #354
 
 ### Changed
