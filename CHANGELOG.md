@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 - DataGrid: Support for untyped lists of lists #343
 - PropertyGrid: Fix description icon alignment for HeaderPlacement set to Above #347
 - RadioButtonList: Enhance RadioButton Control with Individual Button Enable/Disable Capability #350
-- ItemsBag: Ensure that the ItemsBag Property Descriptor fix does not suppress the property change notifications #354
+- ItemsBag: Ensure that the ItemsBag Property Descriptor does not suppress the property change notifications #354
 
 ### Changed
 - TypeHelper.IsIListIList(Type) method changed to private #343
@@ -26,7 +26,8 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - Support for .NET 4.5.2 #317
 - Support for .NET Core App 3.0 #317
- 
+- AppVeyor build #362
+
 ## [3.1.0]
 ### Added
 - Support for .NET Core 3.0 #221
