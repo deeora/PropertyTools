@@ -157,7 +157,7 @@ namespace PropertyTools.Wpf
         public override void SetValue(object component, object value)
         {
             var bag = (ItemsBag)component;
-            bag.SuspendNotifications = true;
+
             foreach (var obj in bag.Objects)
             {
                 var type = obj.GetType();
@@ -166,7 +166,6 @@ namespace PropertyTools.Wpf
             }
 
             bag.RaisePropertyChanged(this.Name);
-            bag.SuspendNotifications = false;
         }
 
         /// <summary>
