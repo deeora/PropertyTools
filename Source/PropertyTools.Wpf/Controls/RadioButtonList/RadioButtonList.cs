@@ -294,7 +294,7 @@ namespace PropertyTools.Wpf
                         itemValue,
                         typeof(string),
                         null,
-                        CultureInfo.CurrentCulture);
+                        CultureInfo.CurrentUICulture);
                 }
                 else
                 {
