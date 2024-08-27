@@ -67,7 +67,7 @@ namespace PropertyTools.Wpf
         {
             get
             {
-                return false;
+                return this.defaultDescriptor.IsReadOnly;
             }
         }
 
