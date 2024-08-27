@@ -15,6 +15,11 @@ namespace PropertyTools.Wpf
     /// <summary>
     /// Provides a property descriptor for an object in the <see cref="ItemsBag" />.
     /// </summary>
+    /// <remarks>
+    /// In order to support "indeterminate values" of the objects in the bag (at least one object have a 
+    /// value that is different from the others), this property descriptor returns nullable types for value 
+    /// types. Such indeterminate values are represented by <c>null</c> values.
+    /// </remarks>
     public class ItemsBagPropertyDescriptor : PropertyDescriptor
     {
         /// <summary>
@@ -67,7 +72,7 @@ namespace PropertyTools.Wpf
         {
             get
             {
-                return false;
+                return this.defaultDescriptor.IsReadOnly;
             }
         }
 
@@ -84,7 +89,7 @@ namespace PropertyTools.Wpf
             {
                 if (this.defaultDescriptor.PropertyType.IsValueType)
                 {
-                    var nt = this.GetNullableType(this.defaultDescriptor.PropertyType);
+                    var nt = TypeHelper.GetNullableType(this.defaultDescriptor.PropertyType);
                     return nt;
                 }
 
@@ -178,30 +183,6 @@ namespace PropertyTools.Wpf
         public override bool ShouldSerializeValue(object component)
         {
             return false;
-        }
-
-        /// <summary>
-        /// Gets the type of the <see cref="Nullable" />.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns>
-        /// The <see cref="Type" />.
-        /// </returns>
-        private Type GetNullableType(Type type)
-        {
-            // http://stackoverflow.com/questions/108104/how-do-i-convert-a-system-type-to-its-nullable-version
-            // Use Nullable.GetUnderlyingType() to remove the Nullable<T> wrapper if type is already nullable.
-            var underlyingType = Nullable.GetUnderlyingType(type);
-            if (underlyingType != null)
-            {
-                return type;
-            }
-
-            // if (type.IsValueType)
-            return typeof(Nullable<>).MakeGenericType(type);
-
-            // else
-            // return type;
         }
     }
 }
