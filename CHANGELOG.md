@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## Unreleased
+
+### Added
+- Support for .NET 8 - Windows #367
+
 ### Fixed
 - DataGrid: Update after pasting values #269
 - DataGrid: Deleting last item in a sorted data grid causes an exception #321
