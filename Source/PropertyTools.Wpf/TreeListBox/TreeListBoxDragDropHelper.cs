@@ -21,7 +21,7 @@ namespace PropertyTools.Wpf
     /// <summary>
     /// Drag/drop helper class for the <see cref="TreeListBox"/>.
     /// </summary>
-    /// <remarks>Based on <a href="http://bea.stollnitz.com/blog/?p=53">blog post</a>.</remarks>
+    /// <remarks>Based on <a href="https://bea.stollnitz.com/blog/?p=53">blog post</a>.</remarks>
     public class TreeListBoxDragDropHelper
     {
         /// <summary>
