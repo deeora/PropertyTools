@@ -133,7 +133,7 @@ namespace PropertyTools.Wpf
         /// </returns>
         public static Type GetListElementType(Type listType)
         {
-            // http://stackoverflow.com/questions/1043755/c-generic-list-t-how-to-get-the-type-of-t
+            // https://stackoverflow.com/questions/1043755/c-sharp-generic-list-t-how-to-get-the-type-of-t
             foreach (var interfaceType in listType.GetInterfaces())
             {
                 if (interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == typeof(IEnumerable<>))
@@ -270,8 +270,8 @@ namespace PropertyTools.Wpf
         /// </returns>
         public static Type GetNullableType(Type type)
         {
-            // http://stackoverflow.com/questions/108104/how-do-i-convert-a-system-type-to-its-nullable-version
-            
+            // https://stackoverflow.com/questions/108104/how-do-i-convert-a-system-type-to-its-nullable-version
+
             // Use Nullable.GetUnderlyingType() to remove the Nullable<T> wrapper if type is already nullable.
             var underlyingType = Nullable.GetUnderlyingType(type);
             if (underlyingType != null)
