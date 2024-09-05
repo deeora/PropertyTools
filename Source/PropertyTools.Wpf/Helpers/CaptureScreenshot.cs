@@ -120,7 +120,6 @@ namespace PropertyTools.Wpf
             var bitmapHandle = CreateCompatibleBitmap(screenDeviceContext, (int)area.Width, (int)area.Height);
             SelectObject(memoryDeviceContext, bitmapHandle); // Select bitmap from compatible bitmap to memDC
 
-            // TODO: BitBlt may fail horribly
             BitBlt(
                 memoryDeviceContext,
                 0,

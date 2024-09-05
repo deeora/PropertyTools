@@ -621,7 +621,6 @@ namespace PropertyTools.Wpf
         protected virtual FrameworkElement CreateEnumControl(
             PropertyItem property, PropertyControlFactoryOptions options)
         {
-            // TODO: use check boxes for bit fields
             //// var isBitField = property.Descriptor.PropertyType.GetTypeInfo().GetCustomAttributes<FlagsAttribute>().Any();
 
             var values = this.GetEnumValues(property.Descriptor.PropertyType).ToArray();
