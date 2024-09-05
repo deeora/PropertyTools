@@ -414,7 +414,7 @@ namespace PropertyTools.Wpf
                 this.draggedData = new List<IDragSource>();
                 this.draggedData.Add(this.sourceItemContainer.DataContext);
 
-                // todo: how to drag multiple items?
+                // drag multiple items?
                 // must set e.Handled = true to avoid items being deselected
                 // foreach (var si in sourceItemsControl.SelectedItems) this.draggedData.Add(si);
             }
