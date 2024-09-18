@@ -1,7 +1,5 @@
 [![License](https://img.shields.io/github/license/PropertyTools/PropertyTools.svg)](https://github.com/PropertyTools/PropertyTools/blob/develop/LICENSE) 
-[![Project page](https://img.shields.io/website-up-down-green-red/https/github.com/PropertyTools/PropertyTools.svg?label=Project%20page)](https://github.com/PropertyTools/PropertyTools) 
 [![NuGet](https://img.shields.io/nuget/v/PropertyTools.Wpf.svg)](https://nuget.org/packages/PropertyTools.Wpf) 
-[![Gitter chat](https://img.shields.io/gitter/room/objorke/propertytools.svg)](https://gitter.im/objorke/propertytools?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 | Control           | Description                                                                              | Status |
 |-------------------|------------------------------------------------------------------------------------------|--------|
@@ -40,9 +38,6 @@
 
 ### Supported frameworks
 
-- Microsoft .NET 4.6.2 or later
+- Microsoft .NET Framework 4.6.2
 - Microsoft .NET 6
-
-### Supported build environments
-
-- Visual Studio 2022
+- Microsoft .NET 8
