@@ -416,6 +416,35 @@ namespace PropertyTools.Wpf
             new UIPropertyMetadata(false));
 
         /// <summary>
+        /// Identifies the <see cref="RefreshView"/> dependency property.
+        ///
+        /// This property is used to trigger a refresh of the <see cref="DataGrid"/> view, ensuring that the content is updated even
+        /// when the bound data source does not raise collection change notifications.
+        /// </summary>
+        /// <remarks>
+        /// The <c>RefreshView</c> property is registered with a default value of <c>false</c>.
+        ///
+        /// It is primarily used to refresh the collection view and update the grid's content in scenarios where the
+        /// <see cref="ItemsSource"/> is not implementing <see cref="INotifyCollectionChanged"/> (i.e., when the data source does not
+        /// notify changes automatically).
+        ///
+        /// The property utilizes a <see cref="CoerceValueCallback"/> to toggle the property value, forcing the update of the
+        /// <see cref="DataGrid"/> view even when the value of the <c>RefreshView</c> property itself does not change.
+        /// This ensures the grid is refreshed when explicitly requested.
+        ///
+        /// When the property changes, the <see cref="RefreshIfRequired"/> method is invoked to apply the refresh logic, ensuring the
+        /// visual state of the grid is synchronized with the underlying data.
+        /// </remarks>
+        public static readonly DependencyProperty RefreshViewProperty = DependencyProperty.Register(
+            nameof(RefreshView),
+            typeof(bool),
+            typeof(DataGrid),
+            new UIPropertyMetadata(
+                false,
+                (d, _) => ((DataGrid)d).RefreshIfRequired(),
+                (d, _) => !((DataGrid)d).RefreshView));
+
+        /// <summary>
         /// The auto fill box.
         /// </summary>
         private const string PartAutoFillBox = "PART_AutoFillBox";
@@ -1141,6 +1170,23 @@ namespace PropertyTools.Wpf
         {
             get => (bool)this.GetValue(WrapItemsProperty);
             set => this.SetValue(WrapItemsProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating the DataGrid needs to be refreshed.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> & <c>false</c> indicate that the DataGrid needs to be refreshed.
+        /// </value>
+        /// <remarks>
+        /// The property is registered with a default value of <c>false</c>.
+        /// The <see cref="CoerceValueCallback"/> toggles the property value.
+        /// This is necessary to force the update of the DataGrid view even if the value of the property does not change.
+        /// </remarks>
+        public bool RefreshView
+        {
+            get => (bool)this.GetValue(RefreshViewProperty);
+            set => this.SetValue(RefreshViewProperty, value);
         }
 
         /// <summary>
